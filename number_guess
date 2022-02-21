@@ -1,0 +1,28 @@
+import random
+answer = random.randint(0, 100)
+trial = int(input("How many times do you want to try? "))
+question = "What number am I thinking of? Guess a number between 1 and 100 " 
+print("Let's play the guessing game!")
+i = 1
+while i < (trial + 1) :       # number of guesses plus 1.. you can also write i <=5 (these are for 5 guesses..)
+  guess = int(input(question))
+  if guess > answer:
+    while i < trial:
+      print("Too high")
+      print(f"You have {trial-i} guesses left!")
+      break
+  elif guess < answer:
+    while i < trial:
+      print("Too low")
+      if i < (trial - 1) :
+        print(f"You have {trial-i} guesses left!")
+      elif i == (trial - 1):
+        print("Stop. Think for a moment.This is your last chance. Use it wisely.")
+      break
+  else:
+    print("Congratulations!")
+    break # if we dont use break here, it will keep asking your guess, although you knew the answer.
+  i += 1
+while i == trial + 1 and guess != answer:
+  print(f"Sorry. The answer is {answer}. Start over please.")
+  break
