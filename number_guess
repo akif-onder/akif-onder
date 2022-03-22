@@ -4,7 +4,7 @@ trial = int(input("How many times do you want to try? "))
 question = "What number am I thinking of? Guess a number between 1 and 100 " 
 print("Let's play the guessing game!")
 i = 1
-while i < (trial + 1) :       # number of guesses plus 1.. you can also write i <=5 (these are for 5 guesses..)
+while i < (trial + 1) :       # number of guesses plus 1.. 
   guess = int(input(question))
   if guess > answer:
     while i < trial:
